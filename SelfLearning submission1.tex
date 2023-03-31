@@ -1,0 +1,242 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{fix-cm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+\usepackage[english]{babel}
+
+\geometry{ margin=30mm }
+\counterwithin{subsection}{section}
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftsecindent}{2.2em}
+\setlength{\cftsubsecindent}{4.2em}
+\setlength{\cftsecnumwidth}{2em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\begin{document}
+\titleformat{\section}
+{\normalfont\fontsize{15}{0}\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+\titleformat{\subsection}
+{\normalfont\fontsize{13}{0}\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+
+%=============================================================================
+
+\pagenumbering{Alph}
+\begin{titlepage}
+\begin{flushright}
+\includegraphics[width=4cm]{USyd}\\[2cm]
+\end{flushright}
+\center 
+\textbf{\huge INFO1111: Computing 1A Professionalism}\\[0.75cm]
+\textbf{\huge 2023 Semester 1}\\[2cm]
+\textbf{\huge Self-Learning Report}\\[3cm]
+
+\textbf{\huge Submission number: 1}\\[0.75cm]
+\textbf{Github link: \url{https://github.com/Ananya-the-jedi/Ananya_self_learning.git} }\\[2cm]
+
+{\large
+\begin{tabular}{|p{0.35\textwidth}|p{0.55\textwidth}|}
+	\hline
+	{\bf Student name} & Ananya Sharma\\
+	{\bf Student ID} & 520400944\\
+	{\bf Topic} & MATLAB \\
+	{\bf Levels already achieved} & ??\\
+	{\bf Levels in this report} & Level A and Level B\\
+	\hline
+\end{tabular}
+}
+\thispagestyle{empty}
+\end{titlepage}
+\pagenumbering{arabic}
+
+
+%=============================================================================
+
+\tableofcontents
+
+%=============================================================================
+
+\newpage
+\section*{Instructions}
+
+\textbf{Important}: This section should be removed prior to submission.
+
+You should use this \LaTeX\ template to generate your self-learning report. Keep in mind the following key points:
+\begin{itemize}
+	\item \textbf{Submissions}: There will be three opportunities during the semester to submit this report. For each submission you can attempt 1 or 2 levels. Each submission should use the same report, but amended to include new information.
+	\item \textbf{Assessment}: In order to achieve level B, you must first have achieved level A, and so on for each level up to level D. This means that we will not assess a higher level until a lower level has been achieved (though we will review one level higher and give you feedback to help you in refining your work).
+	\item \textbf{Minimum requirement}: Remember that in order to pass the unit, you must achieve at least level A in the self-learning (unless you achieve level B in both the skills and knowledge categories).
+	\item \textbf{Using this template}: When completing each section you should remove the explanation text and replace it with your material.
+	\item \textbf{Referencing}: You should also ensure that any resources you use are suitably referenced, and references are included into the reference list at the end of this document. You should use the IEEE reference style \cite{usyd2} (the reference included here shows you how this can be easily achieved).
+\end{itemize}
+
+
+%=============================================================================
+
+
+\newpage
+\section{Level A: Initial Understanding}
+\vspace{5mm}
+
+\subsection{Level A Demonstration}
+\begin{itemize}
+\item \textbf{Submissions}: There will be three opportunities during the semester to submit this report. For each submission you can attempt 1 or 2 levels. Each submission should use the same report, but amended to include new information.
+	\item \textbf{The MATLAB Environment:}:Create a MathWorks account online to use MATLAB, create a new file on the MATLAB environment. The main part of the environment which is used to write any calculations is the command window, using the edit command in the command window we can also create a new file. For example: I created “myfile”. 
+ 
+    \includegraphics[width=\textwidth]{ss1}
+    
+	\item \textbf{Creating and manipulating arrays, vectors, matrices}: This can be done in the command window by writing the arrays in square brackets separated by commas for the same row e.g.- [2,5,6] and separated by semicolon for a column e.g. - [2,5,6;3,4,5]. The results or the vectors are displayed right after hitting enter.  Matrices can be stored in a variable for example: b = [1,3;5] and can be used again  or included in another new matrix e.g. - [b, 3,4] as shown in the image below. 
+ 
+    \includegraphics [width=\textwidth]{ss2}
+    
+    \item There are many ways of manipulating arrays in MATLAB and this environment can be used to find out the dot and the cross product of arrays as well as transposing a vector by doing an apostrophe on the variable. 
+    To find a dot product we simply use the command ANS = dot(a,b) where a and b are some vectors 
+    To find a cross product we use the command AND = cross(a,b) where a and b are some vectors 
+    To transpose a vector, we do a’ where a is a vector which needs to be transposed.
+    
+    \includegraphics [width=\textwidth]{ss3}
+    
+    \includegraphics [width=\textwidth]{ss4}
+    
+	\item \textbf{Saving and loading}: To save new data or for example, a matrix into a file we must use the “save” function. The file that was created earlier will be useful to save any local variable from the command window. This can be done by: save filename.m variable 1, variable 2..
+    To load the newly stored or saved data into the workspace we can use the load command, by: load filename.m -mat variable 1, variable 2, variable 3
+    
+    \includegraphics [width=\textwidth]{ss5}
+    
+    \item \textbf{Visualising data}: To visualize a basic plot with fewer values in MATLAB, we can use the plot function which allows to make a graph of (variable x, variable y ) in the command window which produces a graph in the new file called figue1 as shown below:
+    
+    \includegraphics [width=\textwidth]{ss6}
+    
+    \item Similarly trigonometric functions can be plotted too using the same command where we can assign a value of sinx to y 
+    
+    \includegraphics[width=\textwidth]{ss7}
+    
+\end{itemize}
+
+\subsection{Learning Approach}
+My approach towards learning was to learn through online videos which gave me a detailed outline of the required skills and the functionality of MATLAB for example understanding the syntax and commands, working with arrays and matrices, creating and manipulating plots, and using different toolboxes.. The videos were very helpful and hands on which gave me a better idea on how to approach the problems in MATLAB. It also helped to visit the MathWorks website and reading about other uses and tools of MATLAB. It was also very easy to create a MathWorks account, additionally they had videos on the websites for any beginners which helped me understand the overall MATLAB environment and understand the use of each section like the command window, the workspace, plot tab etc.    
+
+\subsection{Challenges and Difficulties}
+It was overall a challenging experience to learn and get familiar with the MATLAB environment and syntax as I have never used it before. The syntax to write out matrices, the syntax to perform manipulations, the different commands took me a while to get familiar with. However the most challenging part for me was the data visualization as there are not many resources online that tell you a step by step approach to making a plot. However I got know about the plot function which was easy. I still have to expand of doing 3D visualizations in MATLAB as it is a very important mathematical concept.
+
+\subsection{Learning Sources}
+
+
+\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+	\hline
+	Learning Source - What source did you use? (Note: Include source details such as links to websites, videos etc.). & Contribution to Learning - How did the source contribute to your learning (i.e. what did you use the source for)?\\
+	\hline
+	\url{https://youtu.be/O41BWhXFu8E} & the matlab environment and basic mathematical expressions\\
+	\hline
+	\url{https://au.mathworks.com/videos/getting-started-with-matlab-68985.html } & learning about the basic functionality of matlab\\
+	\hline
+	\url{https://youtu.be/83S48Fs9WhY} & Matrix manipulation \\
+	\hline
+	\url{https://youtu.be/LH7WVLHNBd0}  & Loading and saving\\
+	\hline
+	\url{https://youtu.be/a--4DBSr9d0} & matrix manipulation\\
+	\hline
+	\url{https://youtu.be/Fq5R21OefWI} & saving and loading\\
+    \hline
+    \url{https://youtu.be/XS4xibSOdmM} & Analyse and visualize data\\
+    \hline
+    \url{https://youtu.be/kn0uB7xHfsg } & Analyse and visualize data\\
+    \hline
+       
+\end{tabular}
+
+\subsection{Application artifacts}
+Include here a description of what you actually created (what does it do? How does it work? How did you create it?). Include any code or other related artefacts that you created (these should also be included in your github repository).
+
+If you do include screengrabs to show what you have done then these should be annotated to explain what it is showing and what the application does.
+
+
+%=============================================================================
+
+\newpage
+\section{Level B: Basic Application}
+
+Whilst level A is about doing something simple with the topic to just show that you have started to be able to use the tool or technology, level B is about doing something practical that might actually be useful.
+
+\subsection{Level B Demonstration}
+
+This is a short description of the application that you have developed in order to demonstration your understanding. (50-100 words).
+
+\subsection{Application artifacts}
+
+Include here a description of what you actually created (what does it do? How does it work? How did you create it?). Include any code or other related artefacts that you created (these should also be included in your github repository).
+
+If you do include screengrabs to show what you have done then these should be annotated to explain what it is showing and what the application does.
+
+
+%=============================================================================
+
+\newpage
+\section{Level C: Deeper Understanding}
+
+Level C focuses on showing that you have actually understood the tool or technology at a relatively advanced level. You will need to compare it to alternatives, identifying key strengths and weaknesses, and the areas where this tool is most effective. 
+
+\subsection{Strengths}
+What are the key strengths of the item you have learnt? (50-100 words)
+
+\subsection{Weaknesses}
+What are the key weaknesses of the item you have learnt? (50-100 words)
+
+\subsection{Usefulness}
+Describe one scenario under which you believe the topic you have learnt could be useful. (50-100 words)
+
+\subsection{Key Question 1}
+Note: This question is in the table in the ‘Self Learning: List of Topics’ page on Canvas. (50-100 words)
+
+\subsection{Key Question 2}
+Note: This question is in the table in the ‘Self Learning: List of Topics’ page on Canvas. (50-100 words)
+
+
+%=============================================================================
+
+\newpage
+\section{Level D: Evolution of skills}
+\vspace{5mm}
+\subsection{Level D Demonstration}
+
+This is a short description of the application that you have developed. (50-100 words).
+\textit{{\bf IMPORTANT:} You might wish to submit this as part of an earlier submission in order to obtain feedback as to whether this is likely to be acceptable for level D.}
+
+\subsection{Application artifacts}
+
+Include here a description of what you actually created (what does it do? How does it work? How did you create it?). Include any code or other related artefacts that you created (these should also be included in your github repository).
+
+If you do include screengrabs to show what you have done then these should be annotated to explain what it is showing and what the application does.
+
+\subsection{Alternative tools/technologies}
+Identify 2 alternative tools/technologies that can be used instead of the one you studied for your topic. (e.g. if your topic was Python, then you might identify Java and Golang)
+\subsection{Comparative Analysis}
+Describe situations in which both your topic and each of the identified alternatives would be preferred over the others (100-200 words).
+
+
+
+%=============================================================================
+
+\newpage
+
+\bibliographystyle{ieeetran}
+\bibliography{main}
+
+\end{document}
+\end{report}
